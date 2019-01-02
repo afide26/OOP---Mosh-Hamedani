@@ -3,9 +3,9 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Inheritance and Multiple Level Inheritance';
+    item.innerHTML = 'Property Descriptors';
   }
 
   let para = document.getElementById('para1');
-  para.innerHTML = 're-using code'
+  para.innerHTML = 'Using Object.defineProperty, Object.hasOwnProperty'
 }

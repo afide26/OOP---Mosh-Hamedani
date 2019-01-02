@@ -1,31 +1,31 @@
-//Lesson Inheritance and Multiple Level Inheritance
-
-//Notes:
-// Classical Inheritance for languages with Classes. JS does not have classes;
-// Base/Super/Parent Class e.g. Shape
-// Derived/Sub/Child Class e.g. Square, Circle
-// Relationship IS-A: Square is a Shape, Circle is a Shape
-
-//Prototypical Inheritance
-//Parent of another object = Prototype; (parent) or ObjectBase or Template;
-let x = {} // Will have a __proto__ or Prototype of Object;
-let y = {} // Will have a __proto__ or Prototype of Object;
-//Use the Object.getPrototypeOf() method;
-
-Object.getPrototypeOf(x) === Object.getPrototypeOf(y);
-console.log(Object.getPrototypeOf(x) === Object.getPrototypeOf(y));
-
-//Inherit a method from the Proto or Prototypical inheritance;
-console.log(x.toString());
+//Lesson Property Descriptors
 
 
-//Multi-level inheritance;
+//Property descriptors
 
-function Circle() {
-  this.radius = 1;
-  this.draw = function () {
-    console.log('draw');
-  }
+let person = {
+  name: 'Mosh'
 }
+// console.log(person)
 
-const circle = new Circle();
+// for (let key in person)
+//   console.log(key);
+
+
+// console.log('keys', Object.keys(person))
+let objectBase = Object.getPrototypeOf(person);
+console.log('objectBase', objectBase);
+let descriptor = Object.getOwnPropertyDescriptor(objectBase, 'toString');
+console.log('descriptor', descriptor);
+
+//Pass property descriptor using defineProperty
+Object.defineProperty(person, 'name', {
+  writable: true, //writable, enumerable, get and set are property descriptors
+  enumerable: false
+});
+
+
+person.name = 'Alan';
+
+console.log(person); //changes to name property dependent on writable property descriptor;
+console.log(Object.keys(person)); //depends on proeprty enumerable
