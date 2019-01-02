@@ -7,3 +7,18 @@ Languages with OOP
   Ruby
   Python
   JavaScript
+
+Learn OOP Principles
+4 Pillars of Object Oriented Programming
+  Encapsulation
+    - group related variables and functions that operate on them into objects.
+    This is what is called encapsulation.
+  Abstraction
+  Inheritance
+  Polymorphism
+
+Old Way - Procedural Programming
+- divide a program in a set of functions
+- Spaghetti code - interdepency with code
+
+Objects - properties and methods
