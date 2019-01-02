@@ -1,0 +1,9 @@
+Q. What is OOP or Object Oriented Programming?
+A.  Paradigm or Style of programming centred around objects instead of functions.
+
+Languages with OOP
+  C#
+  Java
+  Ruby
+  Python
+  JavaScript
