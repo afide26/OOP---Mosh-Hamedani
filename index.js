@@ -21,10 +21,11 @@ console.log('descriptor', descriptor);
 //Pass property descriptor using defineProperty
 Object.defineProperty(person, 'name', {
   writable: true, //writable, enumerable, get and set are property descriptors
-  enumerable: false
+  enumerable: false,
+  configurable: true // if true the item can be deleted.
 });
 
-
+delete person;
 person.name = 'Alan';
 
 console.log(person); //changes to name property dependent on writable property descriptor;
