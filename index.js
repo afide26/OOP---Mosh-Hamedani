@@ -1,18 +1,6 @@
-//Factories and Constructors
+//Functions are Objects
 //Collection of key:value pairs
 
-//Factory Function
-function createCircle(radius) {
-  return {
-    radius,
-    draw() {
-      console.log('Factories draw')
-    }
-  }
-}
-
-const circ1 = createCircle(2);
-circ1.draw();
 
 //Constructor - Pascal casing and new keyword
 
@@ -21,7 +9,13 @@ function Circle(radius) {
   this.draw = function () {
     console.log('Constructor draw');
   }
+  return this;
 }
 
-const circ2 = new Circle(2);
-circ2.draw();
+const another = new Circle(1);
+another.draw();
+
+const circleApply = Circle.apply({}, [1]);
+const circleCall = Circle.call({}, [1]);
+console.log(circleApply.draw());
+console.log(circleCall.draw());
