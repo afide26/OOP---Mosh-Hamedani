@@ -1,47 +1,36 @@
-//Implementing Abstraction
-//Hide the details; only show the essentials
+//Exercise Stop Watch
+//duration; property - 0;
+// //reset, start, stop
+// function Stopwatch() {
+//   let startTime, endTime, running, duration = 0;
 
-function Circle(radius) {
-  this.radius = radius;
-  //Implementation details are stored in local variables and not assigned to this;
-  //Private members are assigned to let;
-  let defaultLocation = {
-    x: 0,
-    y: 0
-  };
+//   this.start = function () {
+//     if (running)
+//       throw new Error('The stopwatch is already running');
+//     running = true;
+//     startTime = new Date();
+//     console.log(startTime.getTime()); //gets the seconds of the new Date instance;
+//   };
+//   this.stop = function () {
+//     if (!running)
+//       throw new Error('The stopwatch is not running.')
+//     running = false;
+//     endTime = new Date();
+//     let totalTime = (endTime.getTime() - startTime.getTime()) / 1000;
+//     return duration += totalTime;
+//   };
+//   this.reset = function () {
+//     startTime = null;
+//     endTime = null;
+//     duration = 0;
+//   };
 
-  this.getDefaultLocation = function () {
-    return defaultLocation;
-  }
-  this.draw = function () {
-    console.log('Optimum location * radius', location);
-  };
-
-  //Add a getter method to get the default location without a function call;
-  Object.defineProperty(this, 'defaultLocation', {
-    get: function () {
-      return defaultLocation
-    },
-    set: function (value) {
-      if (!value.x || !value.y)
-        throw new Error('Invalid location')
-      return defaultLocation = value;
-    }
-  })
-}
-
-const circle = new Circle(10);
-circle.defaultLocation = {
-  x: 10,
-  y: 11
-};
-//Getting default location using a method
-console.log('Method-', circle.getDefaultLocation());
-
-//Getting default location as a defined property
-
-console.log('Defined property-', circle.defaultLocation);
+//   Object.defineProperty(this, 'duration', {
+//     get: function () {
+//       return duration;
+//     }
+//   })
+// }
 
 
-//Closures - inner functions having access to internal local variables and local variables of parent functions.
-//access members using this... and variables directly.
+// const sw = new Stopwatch();
