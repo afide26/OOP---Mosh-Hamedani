@@ -43,3 +43,4 @@ Topics:
       - Find if a property is in an object using the 'in' method
     - Private Properties
     - Getters/Setters
+      - Object.defineProperty: accepts three parameters (object, 'property', {object with a get function})
