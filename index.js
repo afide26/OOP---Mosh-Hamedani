@@ -3,8 +3,11 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Abstraction, Inheritance and Polymorphism';
+    item.innerHTML = 'Encapsulation, Abstraction, Inheritance and Polymorphism';
   }
+
+  let para = document.getElementById('para1');
+  para.innerHTML = 'Benefits of OOP'
 }
 
 //Abstraction - hiding the complexity (e.g. DVD board and push buttons)
