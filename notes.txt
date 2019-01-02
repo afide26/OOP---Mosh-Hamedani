@@ -28,3 +28,10 @@ Old Way - Procedural Programming
 - Spaghetti code - interdepency with code
 
 Objects - properties and methods
+Topics:
+  Creating Objects
+    - Factories and Constructors
+    - Primitives and Reference Types
+    - Working with Properties
+    - Private Properties
+    - Getters/Setters

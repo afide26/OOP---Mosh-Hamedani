@@ -1,20 +1,18 @@
-window.onload = function () {
-  let docTitle = document.getElementById('doc-title');
-  let title = document.getElementById('title');
-  let titles = [title, docTitle];
-  for (let item of titles) {
-    item.innerHTML = 'Encapsulation, Abstraction, Inheritance and Polymorphism';
+//Object Literals '{}'- Creating Objects
+//Collection of key:value pairs
+const circle = {
+  radius: 1,
+  location: {
+    x: 1,
+    y: 1
+  },
+  draw() {
+    console.log('draw')
   }
+};
 
-  let para = document.getElementById('para1');
-  para.innerHTML = 'Benefits of OOP'
-}
+//circle has 3 members radius, location, draw.
+// draw is a method - defines some logic
+// radius and location are properties - store values
 
-//Abstraction - hiding the complexity (e.g. DVD board and push buttons)
-// Hide methods and properties to reduce impact of change and reduce complexity of the user interface
-
-
-//Inheritance - allows programmer to eliminate redundant code. Allows elements to inherit Object properties and methods without starting from scratch.
-
-
-//Polymorphism - a technique allows programmer to get rid of long if and else and switch case statements.
+circle.draw();
