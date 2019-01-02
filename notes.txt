@@ -38,5 +38,8 @@ Topics:
       Primitives are copied by value
       Reference types are copied by the reference or address in memory
     - Working with Properties
+      - Enumerate keys or values 'for in' loop
+      - Get all keys Object.keys
+      - Find if a property is in an object using the 'in' method
     - Private Properties
     - Getters/Setters
