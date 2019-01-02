@@ -1,18 +1,27 @@
-//Object Literals '{}'- Creating Objects
+//Factories and Constructors
 //Collection of key:value pairs
-const circle = {
-  radius: 1,
-  location: {
-    x: 1,
-    y: 1
-  },
-  draw() {
-    console.log('draw')
+
+//Factory Function
+function createCircle(radius) {
+  return {
+    radius,
+    draw() {
+      console.log('Factories draw')
+    }
   }
-};
+}
 
-//circle has 3 members radius, location, draw.
-// draw is a method - defines some logic
-// radius and location are properties - store values
+const circ1 = createCircle(2);
+circ1.draw();
 
-circle.draw();
+//Constructor - Pascal casing and new keyword
+
+function Circle(radius) {
+  this.radius = radius;
+  this.draw = function () {
+    console.log('Constructor draw');
+  }
+}
+
+const circ2 = new Circle(2);
+circ2.draw();

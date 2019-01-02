@@ -29,8 +29,11 @@ Old Way - Procedural Programming
 
 Objects - properties and methods
 Topics:
-  Creating Objects
+    - Creating Objects
+      Object literals
     - Factories and Constructors
+      Factories return a new object
+      Constructors return new instances of an object like classes in other languages.
     - Primitives and Reference Types
     - Working with Properties
     - Private Properties
