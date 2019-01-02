@@ -1,4 +1,4 @@
-//Abstraction
+//Implementing Abstraction
 //Hide the details; only show the essentials
 
 function Circle(radius) {
@@ -8,15 +8,17 @@ function Circle(radius) {
     x: 0,
     y: 0
   };
-  let computeOptimumLocation = function () {
-    //...
+  let computeOptimumLocation = function (location) {
+    return radius * location;
   };
   this.draw = function () {
-    computeOptimumLocation();
-    console.log('draw');
+    let location = computeOptimumLocation(0.5);
+    console.log('Optimum location * radius', location);
   };
 }
 
 const circle = new Circle(10);
+circle.draw();
 
 //Closures - inner functions having access to internal local variables and local variables of parent functions.
+//access members using this... and variables directly.
