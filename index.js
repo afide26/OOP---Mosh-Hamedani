@@ -1,21 +1,40 @@
-//Functions are Objects
-//Collection of key:value pairs
+//Primitive and reference types
+
+//Primitive values
+let x = 10;
+let y = x; //The first value of x is copied to y
+
+x = 20; //x is now assigned a new value but y's value is unchanged since it copied the old value of x
+
+//Reference types
+let a = {
+  value: 10
+}; //the object is stored in memory
+let b = a; //the address of the object in memory is assigned to b; not the value
+
+a.value = 100;
+//a and b will have the same value.
 
 
-//Constructor - Pascal casing and new keyword
+//Another primitive example
 
-function Circle(radius) {
-  this.radius = radius;
-  this.draw = function () {
-    console.log('Constructor draw');
-  }
-  return this;
+let number = 10;
+
+function increase(number) {
+  number++
 }
 
-const another = new Circle(1);
-another.draw();
+increase(number); //will not change let number
+console.log(number); //still copies the value of number variable not the one in the argument of increase(number);
 
-const circleApply = Circle.apply({}, [1]);
-const circleCall = Circle.call({}, [1]);
-console.log(circleApply.draw());
-console.log(circleCall.draw());
+//Another Reference type
+
+let obj = {
+  value: 10
+}
+
+function increaseObj(obj) {
+  obj.value++
+}
+increaseObj(obj); //Call the function
+console.log(obj.value); //Change reflected in value

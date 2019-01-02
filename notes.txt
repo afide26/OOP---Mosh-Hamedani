@@ -35,6 +35,8 @@ Topics:
       Factories return a new object
       Constructors return new instances of an object like classes in other languages.
     - Primitives and Reference Types
+      Primitives are copied by value
+      Reference types are copied by the reference or address in memory
     - Working with Properties
     - Private Properties
     - Getters/Setters
