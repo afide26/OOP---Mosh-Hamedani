@@ -3,33 +3,15 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Encapsulation';
+    item.innerHTML = 'Abstraction, Inheritance and Polymorphism';
   }
 }
 
-//Procedural Programming Example
-//Variables are outside the function
-let baseSalary = 30000;
-let overtime = 10;
-let rate = 20;
+//Abstraction - hiding the complexity (e.g. DVD board and push buttons)
+// Hide methods and properties to reduce impact of change and reduce complexity of the user interface
 
 
-function getWage(baseSalary, overtime, rate) {
-  return baseSalary + (overtime * rate)
-}
-console.log('Procedural Programming: ', getWage(baseSalary, overtime, rate));
+//Inheritance - allows programmer to eliminate redundant code. Allows elements to inherit Object properties and methods without starting from scratch.
 
-//OOP Style
 
-let employee = {
-  baseSalary: 30000,
-  overtime: 10,
-  rate: 20,
-  getWage() {
-    return this.baseSalary + (this.overtime * this.rate);
-  }
-}
-
-console.log('OOP: ', employee.getWage())
-
-//"The best functions are those with no parameters"
+//Polymorphism - a technique allows programmer to get rid of long if and else and switch case statements.

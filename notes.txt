@@ -14,8 +14,14 @@ Learn OOP Principles
     - group related variables and functions that operate on them into objects.
     This is what is called encapsulation.
   Abstraction
+    - hiding the complexity (e.g. DVD board and push buttons)
+      Hide methods and properties to reduce impact of change and reduce complexity of the user interface
   Inheritance
+    - allows programmer to eliminate redundant code. Allows elements to inherit   
+      Object properties and methods without starting from scratch.
   Polymorphism
+    - a technique allows programmer to get rid of long if and else and switch case 
+      statements
 
 Old Way - Procedural Programming
 - divide a program in a set of functions
