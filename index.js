@@ -1,13 +1,16 @@
-//Creating your own prototypical inheritance
+//Calling the Super Constructor
 
-function Shape() {
-
+function Shape(color) {
+  this.color = color;
 }
 Shape.prototype.duplicate = function () {
   console.log('duplicate');
 }
 
-function Circle(radius) {
+function Circle(radius, color) {
+  //How to call the super constructor
+  //Using apply, the new instance of Shape is called and passed the parameter 'red'
+  Shape.call(this, color)
   this.radius = radius;
 }
 
@@ -23,5 +26,5 @@ Circle.prototype = Object.create(Shape.prototype);
 
 //To solve this we need to override the Shape constructor of circle with the Circle constructor;
 Circle.prototype.constructor = Circle;
-const c = new Circle(2);
+const c = new Circle(2, 'red');
 const s = new Shape();

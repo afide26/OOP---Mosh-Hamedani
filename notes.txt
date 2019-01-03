@@ -60,3 +60,6 @@ Although it's easy to modify or add methods to prototype:
     the same name but different implementation and cause bugs
 
 Premature Optimisation is the root of all bugs.
+
+Notes on resetting prototype
+  - When resetting the prototype for inheritance, reset the prototype.constructor as well.

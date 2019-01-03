@@ -3,9 +3,9 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Resetting the constructor';
+    item.innerHTML = 'Calling the Super Constructor';
   }
 
   let para = document.getElementById('para1');
-  para.innerHTML = 'Creating Your Own Prototypical Inheritance'
+  para.innerHTML = ''
 }
