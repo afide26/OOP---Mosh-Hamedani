@@ -18,6 +18,10 @@ Circle.prototype.draw = function () {
 }
 
 //Resetting the prototype needs to come before the constructor declaration
+//The statement below changes the constructor member of prototype
 Circle.prototype = Object.create(Shape.prototype);
+
+//To solve this we need to override the Shape constructor of circle with the Circle constructor;
+// Circle.prototype.constructor = Circle;
 const c = new Circle(2);
 const s = new Shape();
