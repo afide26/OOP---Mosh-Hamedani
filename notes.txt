@@ -52,3 +52,9 @@ Notes on iterating properties of Objects
     instance and members
   - Using Object.hasOwnProperty('member') only returns instance members of the    
     object and not the prototype members
+
+Although it's easy to modify or add methods to prototype:
+  - Avoid Extending Built-in Objects
+  - Don't modify objects you don't own
+  - Chances are in the future, modules or other programs may extend prototype with 
+    the same name but different implementation and cause bugs

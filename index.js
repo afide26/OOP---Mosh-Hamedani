@@ -1,25 +1,9 @@
-//Iterating Properties
+//Avoid Extending Built-in Objects
+//Don't modify objects you don't own
 
-function Circle(radius) {
-  //Instance member
-  this.radius = radius;
-  this.move = function () {
-    console.log('move');
-  }
+Array.prototype.shuffle = function () {
+  console.log('Extended shuffle');
 }
 
-//Transfer the draw method in the prototype of Circle to avoid duplication in memory
-
-//Prototype member
-Circle.prototype.draw = function () {
-  console.log('Draw')
-}
-const c1 = new Circle(1);
-const c2 = new Circle(10);
-
-//Iterating Object.keys only returns instance members - methods and properties inside the function
-
-console.log(Object.keys(c2));
-
-//How about for in loop? For in loop returns instance and members
-for (let key in c1) console.log(key);
+const arr1 = [];
+arr1.shuffle();
