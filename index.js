@@ -8,8 +8,10 @@
 // Mammals and Fish
 // Use composition instead
 
-//Mixins
-
+//Mixins - use this mixin instead of using Object.assign directly
+function mixin(target, ...sources) {
+  Object.assign(target, ...sources);
+}
 const canEat = {
   eat: function (hunger = 1) {
     hunger--;
@@ -30,14 +32,17 @@ const canSwim = {
 }
 
 
-//Copy or mix-in the properties of the canEat and canWalk objects;
-const person = Object.assign({}, canEat, canWalk);
-
+//Copy properties of the canEat and canWalk objects;
+// const person = Object.assign({}, canEat, canWalk); - Long method
+const person = mixin({}, canEat, canWalk); //Refactored as mixin
 //Copy to Constructor Functions
 function Person() {}
 
 function Duck() {}
-Object.assign(Person.prototype, canEat, canWalk, canSwim);
-Object.assign(Duck.prototype, canEat, canSwim);
+//Refactor Object.assign into a mixin
+// Object.assign(Person.prototype, canEat, canWalk, canSwim); - Long method
+mixin(Person.prototype, canEat, canWalk, canSwim)
+// Object.assign(Duck.prototype, canEat, canSwim);
+mixin(Duck.prototype, canEat, canWalk, canSwim);
 const person2 = new Person();
 const donald = new Duck();
