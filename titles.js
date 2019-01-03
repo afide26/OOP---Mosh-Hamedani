@@ -3,9 +3,9 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Avoid Extending Built-in Objects';
+    item.innerHTML = 'Exercise - Moving Methods to Prototype';
   }
 
   let para = document.getElementById('para1');
-  para.innerHTML = 'Object base'
+  para.innerHTML = 'Using the Stopwatch Exercise'
 }

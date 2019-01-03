@@ -58,3 +58,5 @@ Although it's easy to modify or add methods to prototype:
   - Don't modify objects you don't own
   - Chances are in the future, modules or other programs may extend prototype with 
     the same name but different implementation and cause bugs
+
+Premature Optimisation is the root of all bugs.
