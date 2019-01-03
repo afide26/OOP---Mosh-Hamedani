@@ -3,9 +3,9 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Polymorphism';
+    item.innerHTML = 'When to use Inheritance';
   }
 
   let para = document.getElementById('para1');
-  para.innerHTML = ''
+  para.innerHTML = 'Mixins and Composition'
 }

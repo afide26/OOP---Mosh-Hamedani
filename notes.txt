@@ -63,3 +63,5 @@ Premature Optimisation is the root of all bugs.
 
 Notes on resetting prototype
   - When resetting the prototype for inheritance, reset the prototype.constructor as well.
+
+New ES6 Method Object.assign copies the properties of one object to another.

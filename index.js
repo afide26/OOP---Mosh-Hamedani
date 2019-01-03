@@ -1,47 +1,43 @@
-//Polymorphism
+//When ot use inheritance
 
-// This lesson shows the multiple forms of duplicate. 
-// Same method name but different implementations
-function extend(Child, Parent) {
-  Child.prototype = Object.create(Parent.prototype);
-  Child.prototype.constructor = Child;
+//E.g.
+//Object Hierarchy Animal eat() walk()
+// Person dog 
+// add fish, then the hierarchy is broken, fish can't walk
+// Adding inheritance, we need to create to new Animal instances
+// Mammals and Fish
+// Use composition instead
+
+//Mixins
+
+const canEat = {
+  eat: function (hunger = 1) {
+    hunger--;
+    console.log('eating')
+  }
 }
 
-function Shape() {
-
+const canWalk = {
+  walk: function () {
+    console.log('walking')
+  }
 }
 
-Shape.prototype.duplicate = function () {
-  console.log('Duplicate')
-}
-
-function Circle() {
-
-}
-
-extend(Circle, Shape);
-
-Circle.prototype.duplicate = function () {
-  //to call the duplicate method from shape, use call
-  //Shape.prototype.duplicate.call(this);
-  console.log('Duplicate Circle')
+const canSwim = {
+  swim: function () {
+    console.log('Swimming')
+  }
 }
 
 
-function Square() {
+//Copy or mix-in the properties of the canEat and canWalk objects;
+const person = Object.assign({}, canEat, canWalk);
 
-}
-extend(Square, Shape);
+//Copy to Constructor Functions
+function Person() {}
 
-Square.prototype.duplicate = function () {
-  console.log('Duplicate Square')
-}
-
-//To test the power of polymorphism, see the examples below
-
-const shapes = [new Circle(), new Square()];
-
-//Iterate the shapes array using for of
-
-for (let shape of shapes)
-  shape.duplicate();
+function Duck() {}
+Object.assign(Person.prototype, canEat, canWalk, canSwim);
+Object.assign(Duck.prototype, canEat, canSwim);
+const person2 = new Person();
+const donald = new Duck();
