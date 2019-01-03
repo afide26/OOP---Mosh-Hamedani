@@ -1,65 +1,23 @@
-//Exercise - Moving methods to prototype 
+//Creating your own prototypical inheritance
 
-//duration; property - 0;
-// //reset, start, stop
-function Stopwatch() {
-  let startTime, endTime, running, duration = 0;
+function Shape() {
 
-  Object.defineProperties(this, {
-    duration: {
-      get: function () {
-        return duration;
-      },
-      set: function (value) {
-        return duration = value;
-      }
-    },
-    running: {
-      get: function () {
-        return running;
-      },
-      set: function (bool) {
-        return running = bool;
-      }
-    },
-    endTime: {
-      get: function () {
-        return endTime;
-      },
-      set: function (value) {
-        return endTime = value;
-      }
-    },
-    startTime: {
-      get: function () {
-        return startTime;
-      },
-      set: function (value) {
-        return startTime = value;
-      }
-    }
-  })
+}
+Shape.prototype.duplicate = function () {
+  console.log('duplicate');
 }
 
-Stopwatch.prototype.start = function () {
-  if (this.running)
-    throw new Error('The stopwatch is already running');
-  this.running = true;
-  this.startTime = new Date();
-};
-Stopwatch.prototype.stop = function () {
-  if (!this.running)
-    throw new Error('The stopwatch is not running.')
-  this.running = false;
-  this.endTime = new Date();
-  let totalTime = (this.endTime.getTime() - this.startTime.getTime()) / 1000;
-  return this.duration += totalTime;
-};
-Stopwatch.prototype.reset = function () {
-  this.startTime = null;
-  this.endTime = null;
-  this.duration = 0;
-  this.running = false;
-};
+function Circle(radius) {
+  this.radius = radius;
+}
 
-const sw = new Stopwatch();
+//Create a new object that inherits the prototype of shape;
+
+Circle.prototype.draw = function () {
+  console.log('draw')
+}
+
+//Resetting the prototype needs to come before the constructor declaration
+Circle.prototype = Object.create(Shape.prototype);
+const c = new Circle(2);
+const s = new Shape();

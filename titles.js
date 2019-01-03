@@ -3,9 +3,9 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Exercise - Moving Methods to Prototype';
+    item.innerHTML = 'Prototypical Inheritance';
   }
 
   let para = document.getElementById('para1');
-  para.innerHTML = 'Using the Stopwatch Exercise'
+  para.innerHTML = 'Creating Your Own Prototypical Inheritance'
 }
