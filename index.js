@@ -22,6 +22,6 @@ Circle.prototype.draw = function () {
 Circle.prototype = Object.create(Shape.prototype);
 
 //To solve this we need to override the Shape constructor of circle with the Circle constructor;
-// Circle.prototype.constructor = Circle;
+Circle.prototype.constructor = Circle;
 const c = new Circle(2);
 const s = new Shape();
