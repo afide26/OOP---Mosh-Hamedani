@@ -3,9 +3,9 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Property Descriptors';
+    item.innerHTML = 'Constructor Prototypes';
   }
 
   let para = document.getElementById('para1');
-  para.innerHTML = 'Using Object.defineProperty, Object.hasOwnProperty'
+  para.innerHTML = 'Object base'
 }
