@@ -3,7 +3,7 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Calling the Super Constructor';
+    item.innerHTML = 'Intermediate Function Inheritance';
   }
 
   let para = document.getElementById('para1');

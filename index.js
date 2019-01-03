@@ -1,4 +1,12 @@
 //Calling the Super Constructor
+function extend(Child, Parent) {
+  Child.prototype = Object.create(Parent.prototype);
+  Child.prototype.constructor = Child;
+}
+
+//Use the function to apply the encapsulated logic;
+extend(Circle, Shape);
+extend(Square, Shape)
 
 function Shape(color) {
   this.color = color;
@@ -20,11 +28,23 @@ Circle.prototype.draw = function () {
   console.log('draw')
 }
 
-//Resetting the prototype needs to come before the constructor declaration
-//The statement below changes the constructor member of prototype
-Circle.prototype = Object.create(Shape.prototype);
+//Refactor the protoype inheritance
+// Circle.prototype = Object.create(Shape.prototype);
+// Circle.prototype.constructor = Circle;
 
-//To solve this we need to override the Shape constructor of circle with the Circle constructor;
-Circle.prototype.constructor = Circle;
+
+
+//Create a new Constructor function called Square with a size parameter
+
+function Square(size, color) {
+  Shape.call(this, color)
+  this.size = size;
+}
+
+// Refactor the prototype inheritance
+// Square.prototype = Object.create(Shape.prototype);
+// Shape.prototype.constructor = Square;
+
+const sq = new Square(10, 'blue');
 const c = new Circle(2, 'red');
 const s = new Shape();
