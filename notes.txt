@@ -44,3 +44,11 @@ Topics:
     - Private Properties
     - Getters/Setters
       - Object.defineProperty: accepts three parameters (object, 'property', {object with a get function})
+
+
+Notes on iterating properties of Objects
+  - Iterating an object with Object.keys only returns instance members - methods      and properties inside the function
+  - How about for in loop? Iterating Objects using the 'for in' loop returns 
+    instance and members
+  - Using Object.hasOwnProperty('member') only returns instance members of the    
+    object and not the prototype members
