@@ -3,9 +3,9 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'ES6';
+    item.innerHTML = 'ES6 - The This Keyword';
   }
 
   let para = document.getElementById('para1');
-  para.innerHTML = 'Mixins and Composition'
+  para.innerHTML = 'More studies on the "this" keyword';
 }
