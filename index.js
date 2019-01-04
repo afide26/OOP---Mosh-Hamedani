@@ -1,16 +1,19 @@
-//ES6 Classes
-// the code below is the same as the constructor method for objects
-class Circle {
-  constructor(radius) {
-    this.radius = radius;
-    this.move = function () {
-      console.log('move')
-    }
-  }
-
-  draw() {
-    console.log('draw')
-  }
+//Function Declaration
+sayHello();
+//hoisted on top and can be called before it is written
+function sayHello() {
+  console.log('Hello')
 }
 
-const c = new Circle(2);
+//Function Expression
+//Is not hoisted and cannot be called unless initialized.
+const sayGoodbye = function () {};
+
+//Classes can be defined in two ways
+//Class Declaration
+//Not hoisted to the top
+class Circle {}
+
+//Class Expression
+//Not hoisted to the top
+const Square = class {}
