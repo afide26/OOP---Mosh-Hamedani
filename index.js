@@ -1,28 +1,23 @@
-//ES6 - Private Properties Using Symbols
-//Abstraction - hiding the complexities
-// Using private methods
+//ES6 - Private Properties Using WeakMaps
 
-// class Circle {
-//   constructor(radius) {
-//     //this.radius is public by default;
-//     //Convention _radius assumes the _radius is private but it is not.
-//     this._radius = radius;
-//   }
-// }
+//Indicate radius as a private property
 
-// const c = new Circle(1);
-
-//Primitive Type: Symbol - a unique identifier;
-const _radius = Symbol();
-const _draw = Symbol();
+const _radius = new WeakMap();
+const _move = new WeakMap();
 class Circle {
   constructor(radius) {
-    //_radius is a new Symbol
-    this[_radius] = radius;
+    _radius.set(this, radius);
+
+    //set a private method
+    _move.set(this, () => {
+      console.log('move', this);
+    })
   }
-  //Computed value [_draw] once evaluated assigns the name of the property or method
-  [_draw]() {
-    console.log('Draw')
+
+  //To access the weakmap with a public method
+  draw() {
+    _move.get(this)();
+    console.log('draw')
   }
 }
 
