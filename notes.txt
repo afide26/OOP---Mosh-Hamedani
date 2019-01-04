@@ -73,3 +73,5 @@ ES6 classes
 
 //Class Expression
 //Not hoisted to the top
+
+Modules - this that are related should stick together called Cohesion
