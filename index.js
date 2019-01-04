@@ -1,19 +1,21 @@
-//Function Declaration
-sayHello();
-//hoisted on top and can be called before it is written
-function sayHello() {
-  console.log('Hello')
+//Static Methods
+
+class Circle {
+  constructor(radius) {
+    this.radius = radius;
+  }
+
+  //Instance Method
+  draw() {
+    console.log('Draw');
+  }
+
+  //Static method - will not show in proto
+  static parse(str) {
+    const radius = JSON.parse(str).radius;
+    return new Circle(radius);
+  }
 }
 
-//Function Expression
-//Is not hoisted and cannot be called unless initialized.
-const sayGoodbye = function () {};
-
-//Classes can be defined in two ways
-//Class Declaration - used more often
-//Not hoisted to the top
-class Circle {}
-
-//Class Expression
-//Not hoisted to the top
-const Square = class {}
+const circle = Circle.parse('{"radius":2}')
+console.log(circle);
