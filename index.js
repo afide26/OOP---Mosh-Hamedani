@@ -1,17 +1,13 @@
-//The this keyword
-'use strict' //call a method as a function draw() will not point to window or global
-const Circle = function () {
-  this.draw = function () {
+//ES6 - the this keyword in ES6 Classes
+//ES6 classes are by default run in 'strict mode' modifying the global object;
+
+class Circle {
+  //Instance method - not part of a constructor
+  draw() {
     console.log(this)
   }
 }
 
-const c = new Circle();
-//Method call
-c.draw();
-
+const c = new Circle()
 const draw = c.draw;
-console.log(draw);
-
-//Function call
-draw() // since there is no 'this' keyword, the window object will be the object where the draw method is called.
+draw(); //returns undefined as the draw method is not attached to a specific object.
