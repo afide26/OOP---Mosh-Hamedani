@@ -10,7 +10,7 @@ function sayHello() {
 const sayGoodbye = function () {};
 
 //Classes can be defined in two ways
-//Class Declaration
+//Class Declaration - used more often
 //Not hoisted to the top
 class Circle {}
 
