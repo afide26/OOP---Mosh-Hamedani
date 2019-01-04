@@ -3,7 +3,7 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'Exercise - Polymorphism';
+    item.innerHTML = 'ES6';
   }
 
   let para = document.getElementById('para1');
