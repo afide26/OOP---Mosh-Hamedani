@@ -3,9 +3,9 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'ES6 - Modules';
+    item.innerHTML = 'ES6 - Tooling';
   }
 
   let para = document.getElementById('para1');
-  para.innerHTML = 'Common JS and ES6 Modules';
+  para.innerHTML = 'Tools for developing browser applications';
 }
