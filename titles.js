@@ -3,7 +3,7 @@ window.onload = function () {
   let title = document.getElementById('title');
   let titles = [title, docTitle];
   for (let item of titles) {
-    item.innerHTML = 'ES6 - Getters and Setters';
+    item.innerHTML = 'ES6 - Inheritance';
   }
 
   let para = document.getElementById('para1');

@@ -1,23 +1,25 @@
-//ES6 - Private Properties Using WeakMaps
+//Inheritance
 
-//Indicate radius as a private property
-
-const _radius = new WeakMap();
-
-class Circle {
-  constructor(radius) {
-    _radius.set(this, radius);
+class Shape {
+  constructor(color) {
+    this.color = color;
   }
-  //ES6 getter
-  get radius() {
-    return _radius.get(this);
-  }
-
-  //ES6 Setter
-  set radius(value) {
-    if (typeof value !== 'number' || value <= 0) throw new Error('invalid radius');
-    _radius.set(this, value)
+  move() {
+    console.log('Move')
   }
 }
 
-const c = new Circle(1);
+//Inherit Shape for the Circle Class
+
+class Circle extends Shape {
+  constructor(color, radius) {
+    super(color);
+    this.radius = radius;
+  }
+  draw() {
+    console.log('Draw');
+  }
+}
+
+const c = new Circle('blue', 20);
+//** In this implementation, the Circle.prototype.constructor need not be declared. It will automatically have the Circle as constructor */
