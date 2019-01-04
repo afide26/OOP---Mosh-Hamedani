@@ -1,13 +1,29 @@
-//ES6 - the this keyword in ES6 Classes
-//ES6 classes are by default run in 'strict mode' modifying the global object;
+//ES6 - Private Properties Using Symbols
+//Abstraction - hiding the complexities
+// Using private methods
 
+// class Circle {
+//   constructor(radius) {
+//     //this.radius is public by default;
+//     //Convention _radius assumes the _radius is private but it is not.
+//     this._radius = radius;
+//   }
+// }
+
+// const c = new Circle(1);
+
+//Primitive Type: Symbol - a unique identifier;
+const _radius = Symbol();
+const _draw = Symbol();
 class Circle {
-  //Instance method - not part of a constructor
-  draw() {
-    console.log(this)
+  constructor(radius) {
+    //_radius is a new Symbol
+    this[_radius] = radius;
+  }
+  //Computed value [_draw] once evaluated assigns the name of the property or method
+  [_draw]() {
+    console.log('Draw')
   }
 }
 
-const c = new Circle()
-const draw = c.draw;
-draw(); //returns undefined as the draw method is not attached to a specific object.
+const c = new Circle(1);
